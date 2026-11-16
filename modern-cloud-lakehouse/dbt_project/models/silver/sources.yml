@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: bronze
+    meta:
+      external_location: "../data/bronze/{name}/**/*.parquet"
+    tables:
+      - name: market_ohlcv
+        description: "Raw daily OHLCV market prices ingested from Yahoo Finance API."
+        columns:
+          - name: ticker
+          - name: trade_date
+          - name: open
+          - name: high
+          - name: low
+          - name: close
+          - name: adj_close
+          - name: volume
+          - name: _ingested_at
+          - name: _source_system
+          - name: _batch_id
+
+      - name: ticker_metadata
+        description: "Raw company profile and sector metadata snapshots ingested from Yahoo Finance API."
+        columns:
+          - name: ticker
+          - name: company_name
+          - name: sector
+          - name: industry
+          - name: exchange
+          - name: currency
+          - name: country
+          - name: market_cap
+          - name: _ingested_at
+          - name: _source_system
+          - name: _batch_id

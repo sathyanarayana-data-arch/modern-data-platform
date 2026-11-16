@@ -1,0 +1,7 @@
+modern_cloud_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/warehouse/lakehouse.duckdb"
+      threads: 4
